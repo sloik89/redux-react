@@ -8,7 +8,7 @@ function App() {
   const { cartItems } = useSelector((store) => store.cart);
   console.log(cartItems);
   useEffect(() => {
-    console.log("jestem");
+    calculateTotals;
   }, [cartItems]);
   return (
     <>
