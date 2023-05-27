@@ -27,13 +27,18 @@ const cartSlice = createSlice({
       // find clicked item
       const findItem = state.cartItems.find((item) => item.id === payload);
       // update finded item
-      findItem.amount =
-        findItem.amount <= 1
-          ? (findItem.amount = 1)
-          : (findItem.amount = findItem.amount - 1);
+      findItem.amount = findItem.amount - 1;
     },
     calculateTotals: (state) => {
-      console.log("invoke");
+      let total = 0;
+      let amount = 0;
+      state.cartItems.forEach((item) => {
+        total += item.amount * item.price;
+        amount += item.amount;
+      });
+      console.log(total, amount);
+      state.total = total;
+      state.amount = amount;
     },
   },
 });

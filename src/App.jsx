@@ -6,9 +6,9 @@ import { calculateTotals } from "./features/cart/cartSlice";
 function App() {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((store) => store.cart);
-  console.log(cartItems);
+
   useEffect(() => {
-    calculateTotals;
+    dispatch(calculateTotals());
   }, [cartItems]);
   return (
     <>
