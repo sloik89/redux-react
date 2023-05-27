@@ -1,17 +1,19 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import cartItems from "../../cartItems";
 const initialState = {
-  cartItems: cartItems,
+  cartItems: [],
   amount: 4,
   total: 0,
   isLoading: true,
 };
 const url = "https://course-api.com/react-useReducer-cart-project";
+const url1 = "https://main--serverless-seba-api.netlify.app/api/3-airtable";
 // async action
 export const getCartItems = createAsyncThunk("cart/getCartItems", () => {
-  return fetch(url)
-    .then((res) => res.json())
-    .then((err) => console.log(err));
+  const data = fetch(url)
+    .then((data) => data.json())
+    .catch((err) => console.log(err));
+  return data;
 });
 // end of assyc action
 const cartSlice = createSlice({
