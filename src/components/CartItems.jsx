@@ -12,6 +12,14 @@ const CartItems = () => {
         <header>
           <h2>your bag</h2>
           <h4 className="empty-cart">is currently empty</h4>
+          <button
+            className="btn"
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Refresh
+          </button>
         </header>
       </section>
     );
@@ -30,7 +38,7 @@ const CartItems = () => {
         <hr />
         <div className="cart-total">
           <h4>total</h4>
-          <span>$ {total}</span>
+          <span>$ {total.toFixed(2)}</span>
         </div>
         <button className="btn clear-btn" onClick={() => dispatch(clearCart())}>
           clear cart

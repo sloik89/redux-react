@@ -90,10 +90,11 @@ h3 {
 }
 .clear-btn {
   align-self: center;
+  margin-bottom: 2rem;
 }
 /* cart item */
 .cart-img {
-  width: 250px;
+  max-width: 250px;
   aspect-ratio: 1/1.5;
   display: block;
   object-fit: cover;
@@ -134,4 +135,22 @@ h3 {
   border: none;
   margin: 0;
   padding: 0;
+}
+.remove-btn:hover {
+  color: grey;
+}
+.amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.btn-amount:hover {
+  color: grey;
+}
+.cart-total span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.btn:hover {
+  color: grey;
+  border-color: grey;
 }
